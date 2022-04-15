@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <title>Photofy</title>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: #f5f5f5;
+      }
+
+      .main-block {
+        max-width: 340px;
+        min-height: 200px;
+        padding: 10px;
+        margin: auto;
+        border-radius: 5px;
+        background: #fff;
+      }
+
+      .btn-block {
+        margin-top: 10px;
+        text-align: center;
+      }
+      button {
+        width: 100%;
+        padding: 10px 0;
+        margin: 10px auto;
+        border-radius: 5px;
+        border: none;
+        background: #1c87c9;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #26a9e0;
+      }
+      .url {
+        padding: 10px;
+        background: #f5f5f5;
+        overflow: auto;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-block">
+      <h1>Photo Share</h1>
+      <form enctype="multipart/form-data" action="" method="POST">
+        {% csrf_token %}
+        <hr />
+        <br /><br />
+        <input type="file" name="img" id="img" required />
+        <br /><br />
+
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+      <div align="center">
+        <div class="url">
+          <a href="{{ url }}" target="_blank">{{ url }}</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
